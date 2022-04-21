@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "git-commit-msg-linter": "^4.1.2"
   },
   "dependencies": {
