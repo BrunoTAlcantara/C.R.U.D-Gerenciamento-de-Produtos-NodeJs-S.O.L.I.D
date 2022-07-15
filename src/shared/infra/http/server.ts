@@ -1,6 +1,5 @@
 import 'reflect-metadata';
 import dotenv from 'dotenv';
-import { Sequelize } from 'sequelize';
 
 import { db } from '../sequelize/db';
 import { app } from './express';
