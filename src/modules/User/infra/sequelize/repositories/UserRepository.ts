@@ -15,6 +15,7 @@ class UsersRepository implements IUsersRepository {
   }
 
   async findByUser(user: string): Promise<Model> {
+    console.log(user, '############################');
     const savedUser = await UserModel.findOne({ where: { user } });
 
     return savedUser;

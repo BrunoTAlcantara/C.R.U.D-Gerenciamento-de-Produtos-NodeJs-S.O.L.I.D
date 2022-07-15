@@ -2,22 +2,11 @@ import 'reflect-metadata';
 import dotenv from 'dotenv';
 import { Sequelize } from 'sequelize';
 
+import { db } from '../sequelize/db';
 import { app } from './express';
 import '../../container';
 
 dotenv.config();
-const dbUrl = process.env.DATABASE_URL
-  ? process.env.DATABASE_URL
-  : 'postgres://docker:bruno@localhost:5432/database';
-
-const db = new Sequelize(dbUrl, {
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false,
-    },
-  },
-});
 
 db.authenticate()
   .then(() => {
@@ -27,10 +16,9 @@ db.authenticate()
     console.error('Unable to connect to the database:', err);
   });
 
-app.listen(process.env.PORT || 3333, async () => {
+const port = process.env.PORT || 3333;
+
+app.listen(port, async () => {
   await db.sync();
-  console.log(
-    'Express server listening on port %d in %s mode',
-    app.settings.env
-  );
+  console.log('Conectado a porta:', port);
 });

@@ -1,1 +1,3 @@
-POST /clients 201
+POST /users 400
+POST /users 201
+POST /users 400

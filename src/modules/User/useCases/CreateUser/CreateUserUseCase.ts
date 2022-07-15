@@ -13,7 +13,7 @@ import { IUsersRepository } from '../../respositories/IUsersRepository';
 @injectable()
 class CreateUserCase {
   constructor(
-    @inject('SalesRepository')
+    @inject('UsersRepository')
     private userRepository: IUsersRepository
   ) {}
   async execute({

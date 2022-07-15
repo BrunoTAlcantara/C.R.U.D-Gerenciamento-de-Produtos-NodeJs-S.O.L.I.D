@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import { Sequelize } from 'sequelize';
 
 dotenv.config();
+
 const dbUrl = process.env.DATABASE_URL
   ? process.env.DATABASE_URL
   : 'postgres://docker:bruno@localhost:5432/database';
@@ -9,7 +10,6 @@ const dbUrl = process.env.DATABASE_URL
 export const db = new Sequelize(dbUrl, {
   dialect: 'postgres',
   protocol: 'postgres',
-  dialectOptions: {
-    ssl: true,
-  },
+
+  ssl: !!process.env.DATABASE_URL,
 });
