@@ -26,6 +26,7 @@ db.authenticate()
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
   });
+
 app.listen(process.env.PORT || 3333, async () => {
   await db.sync();
   console.log(

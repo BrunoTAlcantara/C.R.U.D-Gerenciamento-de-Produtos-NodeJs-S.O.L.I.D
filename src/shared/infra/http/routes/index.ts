@@ -8,8 +8,9 @@ import { salesRoutes } from './sales.routes';
 import { usersRoutes } from './user.routes';
 
 const router = Router();
-router.use(myMiddleware);
+
 router.use('/users', usersRoutes);
+
 router.use(authenticateonRoutes);
 
 router.use('/product', productRoutes);
