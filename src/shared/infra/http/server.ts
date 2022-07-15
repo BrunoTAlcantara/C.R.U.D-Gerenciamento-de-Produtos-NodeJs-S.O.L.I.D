@@ -6,9 +6,11 @@ import { app } from './express';
 import '../../container';
 
 dotenv.config();
-const port = process.env.PORT || 3333;
 
-app.listen(port, async () => {
+app.listen(process.env.PORT || 3333, async () => {
   await db.sync();
-  console.log('App running on 3333');
+  console.log(
+    'Express server listening on port %d in %s mode',
+    app.settings.env
+  );
 });
