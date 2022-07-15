@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
-    "start": "node dist/shared/infra/http/server.js",
-    "heroku-postbuild": "npm run build"
+    "start": "node dist/shared/infra/http/server.js"
+    
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
