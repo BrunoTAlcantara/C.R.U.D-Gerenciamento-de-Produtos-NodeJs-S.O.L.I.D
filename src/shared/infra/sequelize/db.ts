@@ -1,7 +1,9 @@
+import dotenv from 'dotenv';
 import { Sequelize } from 'sequelize';
 
-export const db = new Sequelize('database', 'docker', 'bruno', {
+dotenv.config();
+const dbUrl = process.env.DATABASE_URL;
+
+export const db = new Sequelize(dbUrl, {
   dialect: 'postgres',
-  host: 'localhost',
-  port: 5432,
 });

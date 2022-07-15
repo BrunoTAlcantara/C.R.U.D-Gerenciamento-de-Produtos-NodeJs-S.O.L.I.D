@@ -1,5 +1,4 @@
 import 'reflect-metadata';
-
 import { db } from '../sequelize/db';
 import { app } from './express';
 import '../../container';

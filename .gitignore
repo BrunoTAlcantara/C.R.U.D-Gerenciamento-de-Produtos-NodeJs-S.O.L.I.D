@@ -5,4 +5,5 @@ dist
 .editorconfig
 .eslintignore
 .eslintirc.json
+.env
 prettier.config.json
