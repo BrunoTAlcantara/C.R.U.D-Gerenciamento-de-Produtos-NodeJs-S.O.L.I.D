@@ -10,9 +10,10 @@ const dbUrl = process.env.DATABASE_URL
   ? process.env.DATABASE_URL
   : 'postgres://docker:bruno@localhost:5432/database';
 
-const db = new Sequelize(process.env.DATABASE_URL, {
+const db = new Sequelize(dbUrl, {
   dialectOptions: {
     ssl: {
+      require: true,
       rejectUnauthorized: false,
     },
   },
