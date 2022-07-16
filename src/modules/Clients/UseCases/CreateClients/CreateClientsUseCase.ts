@@ -15,8 +15,8 @@ class CreateClientsUseCase {
   async execute({ cnpj, ender, social }: ICreateClientsDto) {
     const clientsFactory = ClientFactory.create(social, ender, cnpj);
 
-    const userAlreadyExists = await this.clientsRepository.findByCnpj(cnpj);
-    if (userAlreadyExists) {
+    const cnpjAlreadyExists = await this.clientsRepository.findByCnpj(cnpj);
+    if (cnpjAlreadyExists) {
       throw new AppError('Cnpj already exists.');
     }
 

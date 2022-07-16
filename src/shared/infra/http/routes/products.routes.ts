@@ -5,8 +5,8 @@ import { Router } from 'express';
 
 import { CreateProductController } from '../../../../modules/Products/useCases/CreateProduct/CreateProductController';
 import { DeleteProductController } from '../../../../modules/Products/useCases/DeleteProduct/DeleteProductController';
-import { ListProductController } from '../../../../modules/Products/useCases/ListProduct/ListClientsController';
-import { UpdateProductController } from '../../../../modules/Products/useCases/UpdateClients/UpdateClientsController';
+import { ListProductController } from '../../../../modules/Products/useCases/ListProduct/ListProductController'
+import { UpdateProductController } from '../../../../modules/Products/useCases/UpdateProduct/UpdateProductsController';
 
 const productRoutes = Router();
 
