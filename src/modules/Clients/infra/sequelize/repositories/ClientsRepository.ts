@@ -15,6 +15,14 @@ class ClientsRepository implements IClientsRepository {
     const clients = await ClientsModel.findAll();
     return clients;
   }
+
+
+  async findByCnpj(cnpj: number) {
+    const savedCnpj = await ClientsModel.findOne({ where: { cnpj } });
+
+    return savedCnpj;
+  }
+
   async delete(id: string): Promise<void> {
     await ClientsModel.destroy({ where: { id } });
   }

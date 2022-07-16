@@ -6,8 +6,12 @@ import { CreateProductUserCase } from './CreateProductUserCase';
 class CreateProductController {
   async handle(req: Request, res: Response): Promise<Response> {
     const { desc, unMed, preco, valor } = req.body;
-
+ 
     const createProduUsername = container.resolve(CreateProductUserCase);
+
+
+
+
     await createProduUsername.execute({
       desc,
       unMed,

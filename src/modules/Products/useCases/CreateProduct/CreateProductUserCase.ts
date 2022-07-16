@@ -24,6 +24,7 @@ class CreateProductUserCase {
     preco,
     valor,
   }: IProductsDto): Promise<IOutputProductsDto> {
+    
     const productFactory = ProdutsFactory.create(desc, unMed, preco, valor);
     await this.productRepository.create(productFactory as Products);
 

@@ -2,6 +2,7 @@ import { inject, injectable } from 'tsyringe';
 
 import { Clients } from '../../../../domain/Clients/entities/Clients';
 import ClientFactory from '../../../../domain/Clients/factory/clients.factory';
+import { AppError } from '../../../../shared/errors/AppError';
 import { ICreateClientsDto } from '../../dtos/ICreateClientsDto';
 import { IClientsRepository } from '../../repositories/IClientesRepository';
 
@@ -13,6 +14,11 @@ class CreateClientsUseCase {
   ) {}
   async execute({ cnpj, ender, social }: ICreateClientsDto) {
     const clientsFactory = ClientFactory.create(social, ender, cnpj);
+
+    const userAlreadyExists = await this.clientsRepository.findByCnpj(cnpj);
+    if (userAlreadyExists) {
+      throw new AppError('User already exists');
+    }
 
     this.clientsRepository.create(clientsFactory as Clients);
 

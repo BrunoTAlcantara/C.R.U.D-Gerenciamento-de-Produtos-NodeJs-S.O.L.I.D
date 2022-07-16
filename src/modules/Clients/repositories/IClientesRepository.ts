@@ -5,4 +5,5 @@ export interface IClientsRepository {
   list(): Promise<any>;
   delete(id: string): Promise<void>;
   update(update, id: string): Promise<void>;
+  findByCnpj(cnpj: number);
 }

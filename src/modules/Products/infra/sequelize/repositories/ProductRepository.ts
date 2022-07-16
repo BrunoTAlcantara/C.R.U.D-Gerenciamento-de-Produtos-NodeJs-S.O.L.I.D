@@ -13,6 +13,8 @@ class ProductRepository implements IProductRepository {
     });
   }
 
+  
+   
   async list(): Promise<any> {
     const product = await ProductModel.findAll();
     return product;
