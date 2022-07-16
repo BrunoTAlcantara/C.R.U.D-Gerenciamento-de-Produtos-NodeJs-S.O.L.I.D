@@ -17,7 +17,7 @@ class CreateClientsUseCase {
 
     const userAlreadyExists = await this.clientsRepository.findByCnpj(cnpj);
     if (userAlreadyExists) {
-      throw new AppError('User already exists');
+      throw new AppError('Cnpj already exists');
     }
 
     this.clientsRepository.create(clientsFactory as Clients);
