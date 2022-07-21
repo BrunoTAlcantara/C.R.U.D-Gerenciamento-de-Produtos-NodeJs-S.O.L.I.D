@@ -26,7 +26,6 @@ export function del() {
   const dele = fs.writeFile(
     path.join(__dirname, 'logs.txt'),
     '',
-    // eslint-disable-next-line func-names
     function (err) {
       if (err) throw err;
       console.log('Salvo!');

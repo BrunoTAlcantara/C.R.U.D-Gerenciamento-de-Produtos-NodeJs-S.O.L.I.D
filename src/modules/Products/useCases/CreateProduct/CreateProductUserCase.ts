@@ -15,16 +15,13 @@ class CreateProductUserCase {
   desc: string;
   unMed: string;
   preco: number;
-
   valor: number;
-
   async execute({
     desc,
     unMed,
     preco,
     valor,
   }: IProductsDto): Promise<IOutputProductsDto> {
-    
     const productFactory = ProdutsFactory.create(desc, unMed, preco, valor);
     await this.productRepository.create(productFactory as Products);
 

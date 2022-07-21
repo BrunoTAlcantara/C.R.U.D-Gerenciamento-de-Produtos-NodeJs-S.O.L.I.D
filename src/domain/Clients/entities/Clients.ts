@@ -2,7 +2,6 @@ import { uuid } from 'uuidv4';
 
 class Clients {
   public readonly id: string;
-
   public social: string;
   public cnpj: number;
   public ender: string;

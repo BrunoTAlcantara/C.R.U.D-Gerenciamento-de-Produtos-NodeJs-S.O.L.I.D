@@ -16,10 +16,8 @@ class ClientsRepository implements IClientsRepository {
     return clients;
   }
 
-
-  async findByCnpj(cnpj: number)  {
+  async findByCnpj(cnpj: number) {
     const savedCnpj = await ClientsModel.findOne({ where: { cnpj } });
-
     return savedCnpj;
   }
 

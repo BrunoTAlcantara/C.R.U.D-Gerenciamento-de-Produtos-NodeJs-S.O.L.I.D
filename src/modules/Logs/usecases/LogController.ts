@@ -8,11 +8,10 @@ class LogController {
     const logsUseCase = container.resolve(LogsUseCase);
     const log = load();
 
-    console.log(log);
-
     logsUseCase.execute({
       log,
     });
+
     del();
   }
 }

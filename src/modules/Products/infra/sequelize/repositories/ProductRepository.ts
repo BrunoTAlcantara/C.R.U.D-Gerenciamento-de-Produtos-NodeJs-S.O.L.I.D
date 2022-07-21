@@ -13,8 +13,6 @@ class ProductRepository implements IProductRepository {
     });
   }
 
-  
-   
   async list(): Promise<any> {
     const product = await ProductModel.findAll();
     return product;
@@ -23,8 +21,6 @@ class ProductRepository implements IProductRepository {
     await ProductModel.destroy({ where: { id } });
   }
   async update({ id }, update): Promise<void> {
-    console.log(id, update, 'Repository');
-
     await ProductModel.update(update, { where: { id } });
   }
 }
