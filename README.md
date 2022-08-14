@@ -1,7 +1,7 @@
 <h1 align="center">
 
 <strong>
-Barbearia API - NodeJs
+C.R.U.D Gerenciamento de Produtos - NodeJs - S.O.L.I.D
 </strong>
 </h1>
 
